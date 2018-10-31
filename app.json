@@ -1,12 +1,27 @@
 {
   "pages":[
+    "pages/department/department",
+    "pages/subject/subject",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/card/card",
+    "pages/user/user",
+    "pages/update/update"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "phoneBook",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#5579ee",
+    "list": [{
+      "pagePath": "pages/department/department",
+      "text": "部门"
+    },{
+"pagePath": "pages/subject/subject",
+"text": "学科"
+    }]
   }
 }
