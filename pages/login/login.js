@@ -1,11 +1,15 @@
 // pages/login/login.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    phone: '',
+    password: '',
+    isError: false,
+    errorText: ''
   },
 
   /**
@@ -13,6 +17,66 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  /**
+   * 输入手机号
+   */
+  bindPhoneInput: function(item){
+    this.setData({
+      phone: item.detail.value
+    })
+  },
+  
+    /**
+   * 输入密码
+   */
+  bindPasswordInput: function (item) {
+    this.setData({
+      password: item.detail.value
+    })
+  },
+
+
+  /**
+ * 点击登录按钮
+ */
+  login: function (item) {
+    if(this.data.phone === '' || this.data.password === ''){
+      this.setData({
+        isError: true,
+        errorText: "手机号码或密码不能为空"
+      })
+      return;
+    }
+    let that = this;
+    wx.request({
+      url: `${app.globalData.apiUrl}/login`,
+      data: {
+        phone: this.data.phone,
+        password: this.data.password
+      },
+      method: "POST",
+      success: function(res){
+        if(res.data.success){
+          wx.setStorageSync("USERID", res.data.userID);
+          wx.switchTab({
+            url: '/pages/department/department',
+          });
+        }else{
+          that.setData({
+            isError: true,
+            errorText: "请输入正确的手机号码或密码"
+          })
+        }
+      },
+      fail: function(item){
+        console.log(item)
+      },
+      complete: function(item){
+        console.log(item)
+      }
+    })
   },
 
   /**

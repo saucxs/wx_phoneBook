@@ -32,7 +32,7 @@ app.on('error', (error, ctx) => {
 });
 
 http.createServer(app.callback())
-  .listen(8090)
+  .listen(8000)
   .on('listening', function () {
-    console.log('server listening on: ' + 8090)
+    console.log('server listening on: ' + 8000)
   });
