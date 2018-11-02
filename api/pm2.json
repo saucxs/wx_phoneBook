@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "phoneBook",
+    "script": "app.js",
+    "cwd": "/home/nodejs/phoneBook",
+    "exec_mode": "fork",
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+
+    }
+  }]
+}
