@@ -31,9 +31,28 @@
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
+  "miniprogram": {
+    "current": 0,
+    "list": [
+      {
+        "id": -1,
+        "name": "login",
+        "pathName": "pages/login/login",
+        "query": ""
+      },
+      {
+        "id": -1,
+        "name": "user",
+        "pathName": "pages/user/user",
+        "query": ""
+      },
+      {
+        "id": 2,
+        "name": "crad",
+        "pathName": "pages/card/card",
+        "query": "type=2&title=A学科"
+      }
+    ]
+  }
 	}
 }
