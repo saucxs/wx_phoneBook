@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class="container">
   <view class="login-container">
-    <text class="app-title">系统</text>
+    <text class="app-title">通讯录</text>
     <form class="login-form">
       <view class="section">
         <input name="phone" type="number" bindinput="bindPhoneInput" maxlength="11" placeholder="手机号码" />
