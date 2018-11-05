@@ -71,10 +71,10 @@ Page({
         }
       },
       fail: function(item){
-        console.log(item)
+        
       },
       complete: function(item){
-        console.log(item)
+       
       }
     })
   },

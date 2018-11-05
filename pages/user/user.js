@@ -14,6 +14,11 @@ Page(filter.loginCheck({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+    if (getApp().globalData.updateData){
+      this.setData({
+        user: getApp().globalData.updateData
+      })
+    }
 		this.setData({
 			userID: wx.getStorageSync('USERID')
 		});
@@ -21,8 +26,7 @@ Page(filter.loginCheck({
 		wx.request({
 			url: `${app.globalData.apiUrl}/getContactByID/${that.data.userID}`,
 			data: {},
-			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-			// header: {}, // 设置请求的 header
+			method: 'GET', 
 			success: function (res) {
 				// success
 				if (res.data.success) {
@@ -45,6 +49,10 @@ Page(filter.loginCheck({
 			phoneNumber: e.currentTarget.dataset.phone
 		})
 	},
+
+  onShow: function (e) {
+    this.onLoad();
+  },
 	/**
 	 * 用户点击右上角分享
 	 */

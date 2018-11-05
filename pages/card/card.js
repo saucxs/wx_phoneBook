@@ -21,20 +21,16 @@ Page(filter.loginCheck({
 	 * 生命周期函数--监听页面加载
 	 */
   onLoad: function (options) {
-    console.log('type0', options);
     let type = options.type ? parseInt(options.type) : 1,
-      keyword = type === 3 ? options.title : '';
-    console.log('type', type);
+    keyword = type === 3 ? options.title : '';
     this.setData({
       dataType: type,
       dataId: options.id ? parseInt(options.id) : 0,
       keyword: keyword
     });
-    console.log('this.data', this.data);
     wx.setNavigationBarTitle({
       title: type === 3 ? `${keyword}的搜索结果` : options.title
     });
-    console.log('type2', type);
     this.fetchCardList();
   },
 

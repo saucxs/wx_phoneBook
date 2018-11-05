@@ -92,17 +92,20 @@ Page(filter.loginCheck({
     wx.showLoading({
       mask: true
     })
+    let data = {
+      name: this.data.update.name,
+      gender: this.data.update.gender,
+      phone: this.data.update.phone,
+      deptID: this.data.deptArray[this.data.deptIndex].id,
+    }
+    if (this.data.subjectIndex != -1){
+      data.subjectID = this.data.subjectArray[this.data.subjectIndex].id
+    }
+    let _this = this;
     wx.request({
       url: `${app.globalData.apiUrl}/updateContact/${this.data.userID}`,
-      data: {
-        name: this.data.update.name,
-        gender: this.data.update.gender,
-        phone: this.data.update.phone,
-        deptID: this.data.deptArray[this.data.deptIndex].id,
-        subjectID: this.data.subjectArray[this.data.subjectIndex].id
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      data: data,
+      method: 'POST', 
       success: function (res) {
         // success
         wx.hideLoading();
@@ -112,13 +115,12 @@ Page(filter.loginCheck({
             icon: 'success',
             success: function () {
               setTimeout(() => {
-                wx.switchTab({
-                  url: "/pages/user/user"
-                });
-              }, 1500)
+                 wx.switchTab({
+                   url: "/pages/user/user"
+                 });
+              }, 500)
             }
           })
-
         }
       },
       fail: function () {

@@ -1,7 +1,7 @@
 {
   "name": "wx_phoneBook",
   "version": "1.0.0",
-  "description": "微信小程序-通讯录",
+  "description": "微信小程序-SAU通讯录",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

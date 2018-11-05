@@ -2,8 +2,6 @@
   "pages": [
     "pages/login/login",
     "pages/department/department",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/subject/subject",
     "pages/card/card",
     "pages/user/user",
@@ -12,7 +10,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "SAU",
+    "navigationBarTitleText": "SAU通讯录",
     "navigationBarTextStyle": "light"
   },
   "tabBar": {

@@ -4,6 +4,11 @@
     background-color: #fff;
 }
 
+.login_bg{
+  height: 100%;
+  position: absolute
+}
+
 .login-container {
     position: absolute;
     top: 50%;
