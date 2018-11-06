@@ -13,8 +13,10 @@ koa + mysql + nginx + ES6 + 微信小程序
 ### 源码地址
 [https://github.com/saucxs/wx_phoneBook](https://github.com/saucxs/wx_phoneBook) 
 
-### 演示地址(正在审核)
-期待...
+### 演示地址(审核通过)
+测试账号：18966667777 密码：test
+![小程序码](screenshot/wechat.jpg)
+
 
 ### 版本功能
 - [x] 登陆模块-使用手机号登陆
